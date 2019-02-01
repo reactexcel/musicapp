@@ -25,7 +25,7 @@ export default class WelcomeScreen extends React.Component {
           <Text style={styles.header}>
             Welcome To MuZa
           </Text>
-            <TouchableOpacity onPress={()=>{}}>
+            <TouchableOpacity onPress={()=>{this.props.navigation.navigate('Profile')}}>
               <View style={styles.avatarContainer}>
                 <View style={styles.avatar}>
                   <FontAwesome
@@ -83,6 +83,7 @@ const styles = StyleSheet.create({
     textAlign:'center'
   },
   textContainer:{
+    flexDirection:'row',
     paddingLeft:20,
     paddingRight:20,
     justifyContent:'center',

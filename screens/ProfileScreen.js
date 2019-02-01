@@ -7,7 +7,9 @@ import {
   Text,
   TouchableOpacity,
   View,
-  Dimensions
+  Dimensions,
+  TextInput,
+  KeyboardAvoidingView
 } from 'react-native';
 import { WebBrowser } from 'expo';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
@@ -20,9 +22,34 @@ export default class ProfileScreen extends React.Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        
-      </View>
+        <View style={styles.container}>
+          
+          <View style={styles.ImageContainer}>
+            <Image
+              style={styles.Image}
+              source={require('../assets/images/sergeinovikov.png')}
+            />
+          </View>
+          <Text style={styles.artistName}>
+            Sergei Novikov
+          </Text>
+          <View style={styles.textContainer}>
+            <Text style={styles.artistName}>
+              Tsongas Center at UMass Lowell
+            </Text>
+          </View>
+          <View style={styles.emailContainer}>
+            <Text style={styles.emailText}>
+              Enter email for free access to artist’s music:
+            </Text>
+            <View style={{marginTop:10}}>
+              <TextInput
+                style={{alignSelf:'center',borderWidth:1, width:width * 0.70, height:45,paddingLeft:5}}
+                placeholder="Enter your email"
+              />
+            </View>
+          </View>
+        </View>
     );
   }
 }
@@ -30,5 +57,35 @@ export default class ProfileScreen extends React.Component {
 const styles = StyleSheet.create({
   container:{
     flex:1,
+    paddingTop:68,
+    justifyContent:'space-between'
   },
+  ImageContainer:{
+    flexDirection:'row',
+    justifyContent:'center',
+    alignContent:'center',
+  },
+  Image:{
+    width:width * 0.75,
+    height: height * 0.45
+  },
+  artistName:{
+    marginTop:5,
+    fontSize:20,
+    fontWeight:'800',
+    textAlign:'center'
+  },
+  textContainer:{
+    padding:10
+  },
+  emailContainer:{
+    marginTop:10,
+    marginLeft:20,
+    marginRight:20,
+    marginBottom:10
+  },
+  emailText:{ 
+    fontSize:18,
+    textAlign:'center',
+  }
 });
