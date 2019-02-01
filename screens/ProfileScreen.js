@@ -23,7 +23,6 @@ export default class ProfileScreen extends React.Component {
   render() {
     return (
         <View style={styles.container}>
-          
           <View style={styles.ImageContainer}>
             <Image
               style={styles.Image}
@@ -42,11 +41,27 @@ export default class ProfileScreen extends React.Component {
             <Text style={styles.emailText}>
               Enter email for free access to artist’s music:
             </Text>
-            <View style={{marginTop:10}}>
+            <View style={styles.margin}>
               <TextInput
-                style={{alignSelf:'center',borderWidth:1, width:width * 0.70, height:45,paddingLeft:5}}
+                style={styles.TextInput}
                 placeholder="Enter your email"
               />
+            </View>
+          </View>
+          <View style={styles.donateContainer}>
+            <Text style={styles.artistName}>
+              Support Artist
+            </Text>
+            <View style={styles.donateView}>
+              <Text style={styles.donateText}>
+                $1
+              </Text>
+              <Text style={styles.donateText}>
+                $2
+              </Text>
+              <Text style={styles.donateText}>
+                $5
+              </Text>
             </View>
           </View>
         </View>
@@ -57,7 +72,7 @@ export default class ProfileScreen extends React.Component {
 const styles = StyleSheet.create({
   container:{
     flex:1,
-    paddingTop:68,
+    paddingTop:48,
     justifyContent:'space-between'
   },
   ImageContainer:{
@@ -87,5 +102,29 @@ const styles = StyleSheet.create({
   emailText:{ 
     fontSize:18,
     textAlign:'center',
+  },
+  TextInput:{
+    alignSelf:'center',
+    borderWidth:1, 
+    width:width * 0.70, 
+    height:45,
+    paddingLeft:5
+  },
+  margin:{
+    marginTop:10
+  },
+  donateView:{
+    flexDirection:'row',
+    justifyContent:'center',
+    alignContent:'center'
+  },
+  donateContainer: {
+    marginBottom:10
+  },
+  donateText:{
+    padding:10,
+    // paddingRight:15,
+    fontSize:20,
+    fontWeight:'800'
   }
 });
